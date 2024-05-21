@@ -12,19 +12,19 @@ int main(void) {
 
     for (k = 1; k < N; ++k) {
         //
-        amax = fabs(a[k-1][0]);
-
+        amax = fabs(a[k-1][k-1]);
+        p = k;
         for (i = k + 1; i <= N; i++) {
-            if (fabs(a[i-1][0]) > amax){
-                amax = fabs(a[i-1][0]);
+            if (fabs(a[i-1][k-1]) > amax){
+                amax = fabs(a[i-1][k-1]);
                 p = i;
             }
         }
-        if (p == k){
-            for (j = 0; j <= N; j++) {
-                tmp = a[k-1][j-1];
-                a[k-1][j-1] = a[p-1][k-1];
-                a[p-1][k-1] = tmp;
+        if (p != k){
+            for (j = 0; j < N; j++) {
+                tmp = a[k-1][j];
+                a[k-1][j] = a[p-1][j];
+                a[p-1][j] = tmp;
             }
             tmp = b[k-1];
             b[k-1] = b[p-1];
