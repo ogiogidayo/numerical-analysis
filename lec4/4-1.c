@@ -1,6 +1,5 @@
 // 3.2
 #include <stdio.h>
-#include <math.h>
 
 #define NMAX 20
 
@@ -13,7 +12,7 @@ int main(void) {
     do {
         x = - (f(x)/ df(x)) + x;
         n++;
-        printf("%.201f\n", x);
+        printf("%d %.201f\n", n, x);
     } while (n < NMAX);
 }
 

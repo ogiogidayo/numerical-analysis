@@ -20,9 +20,9 @@ int main(void) {
             }
             xn[i] += a[i][i] *x[i];
             xn[i] /= a[i][i];
+            x[i] = xn[i];
         }
         for (i = 0; i < N; ++i) {
-            x[i] = xn[i];
             printf("%20.20lf", x[i]);
         }
         printf("\n");

@@ -13,17 +13,17 @@ int main(void){
     a = 0;
     b = 4;
 
-    eps = 0.001;
+    eps = 0.0000001;
 
     do{
         c = (a + b)/2;
         if(f(a)*f(c) < 0) b = c;
         else if(f(c)*f(b) < 0) a = c;
         count ++;
-        printf("反復回数: %d, 近似解: %f, 絶対値誤差: %f\n", count, c, fabs(b - a));
+        printf("%f\n",c);
     } while(fabs(b - a) > eps);
 }
 
 double f(double x){
-    return (cos(x / 2));
+    return (x*x-5);
 }
