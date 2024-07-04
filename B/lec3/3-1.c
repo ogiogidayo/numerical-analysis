@@ -2,7 +2,7 @@
 #include <math.h>
 
 #define M 6
-#define N (M-2)
+#define N M-2
 
 int main(){
     int p;
